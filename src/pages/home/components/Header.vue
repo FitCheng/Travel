@@ -1,4 +1,5 @@
 <template>
+  <div>
    <div class="header">
     <div class="header-left">
       <span class="iconfont back-icon">&#xe624;</span>
@@ -11,7 +12,8 @@
       城市
       <span class="iconfont arrow-icon">&#xe64a;</span>
     </div>
-   </div>
+  </div>
+</div>
 </template>
 
 <script>
