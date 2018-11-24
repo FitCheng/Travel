@@ -19,14 +19,15 @@ export default {
   data () {
     return {
       swiperOption: {
+        autoplay: false
       },
       iconsList: [{
         id: '0001',
         imgurl: require('../../../assets/images/icons1.png'),
-        desc: '景点门票dsadasdadasdds'
+        desc: '景点门票'
       }, {id: '0002',
         imgurl: require('../../../assets/images/icons2.png'),
-        desc: '一日游'
+        desc: '一1日游'
       }, {id: '0003',
         imgurl: require('../../../assets/images/icons3.png'),
         desc: '杭州必游'
@@ -67,11 +68,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~styles/mixins.styl'
-@import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
+  @import '~styles/varibles.styl'
   .icons >>> .swiper-container
     height: 0
     padding-bottom: 50%
+  .icons
+    margin-top: .1rem
   .icon
     overflow: hidden
     float: left
@@ -98,5 +101,6 @@ export default {
       height: .44rem
       line-height: .44rem
       color: $darkTextColor
+      text-align: center
       ellipsis()
 </style>
