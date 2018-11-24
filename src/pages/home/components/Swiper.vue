@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList">
+      <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgurl"/>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
@@ -22,10 +22,15 @@ export default{
         autoplayDisableOnInteraction: false
       },
       swiperList: [{
+        id: '001',
         imgurl: require('../../../assets/images/Swiper1.jpg')}, {
+        id: '002',
         imgurl: require('../../../assets/images/Swiper2.jpg')}, {
+        id: '003',
         imgurl: require('../../../assets/images/Swiper3.jpg')}, {
+        id: '004',
         imgurl: require('../../../assets/images/Swiper4.jpg')}, {
+        id: '005',
         imgurl: require('../../../assets/images/Swiper5.jpg')
       }]
     }
