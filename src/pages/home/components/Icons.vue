@@ -4,7 +4,7 @@
     <swiper-slide v-for="(page,index) of pages" :key="index">
       <div class="icon" v-for="item of page" :key="item.id">
         <div class="icon-img">
-          <img class="icon-img-content" :src="item.imgurl">
+          <img class="icon-img-content" :src="item.imgUrl">
         </div>
         <p class="icon-desc">{{ item.desc }}</p>
       </div>
@@ -16,45 +16,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    List: Array
+  },
   data () {
     return {
       swiperOption: {
         autoplay: false
-      },
-      iconsList: [{
-        id: '0001',
-        imgurl: require('../../../assets/images/icons1.png'),
-        desc: '景点门票'
-      }, {id: '0002',
-        imgurl: require('../../../assets/images/icons2.png'),
-        desc: '一1日游'
-      }, {id: '0003',
-        imgurl: require('../../../assets/images/icons3.png'),
-        desc: '杭州必游'
-      }, {id: '0004',
-        imgurl: require('../../../assets/images/icons4.png'),
-        desc: '打卡圣地'
-      }, {id: '0005',
-        imgurl: require('../../../assets/images/icons5.png'),
-        desc: '旅游清单'
-      }, {id: '0006',
-        imgurl: require('../../../assets/images/icons6.png'),
-        desc: '西湖'
-      }, {id: '0007',
-        imgurl: require('../../../assets/images/icons7.png'),
-        desc: '泡温泉'
-      }, {id: '0008',
-        imgurl: require('../../../assets/images/icons8.png'),
-        desc: '西溪湿地'
-      }, {id: '0009',
-        imgurl: require('../../../assets/images/icons9.png'),
-        desc: '千岛湖'}]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconsList.forEach((item, index) => {
+      this.List.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -74,7 +49,7 @@ export default {
     height: 0
     padding-bottom: 50%
   .icons
-    margin-top: -.3rem
+    margin-top: .1rem
     .icon
       overflow: hidden
       float: left
