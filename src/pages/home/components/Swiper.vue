@@ -13,13 +13,13 @@
 export default{
   name: 'HomeSwiper',
   data () {
-    return{
+    return {
       swiperOption: {
         pagination: '.swiper-pagination',
         autoplay: true,
-        speed: 1900,
+        speed: 3000,
         loop: true,
-        autoplayDisableOnInteraction:false
+        autoplayDisableOnInteraction: false
       },
       swiperList: [{
         imgurl: require('../../../assets/images/Swiper1.jpg')}, {
