@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="showSwiper">
       <swiper-slide v-for="item of List" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
@@ -25,6 +25,11 @@ export default{
         autoplayDisableOnInteraction: false
       }
     }
+  },
+  computed: {
+    showSwiper () {
+      return this.List.length
+    }
   }
 }
 </script>
@@ -37,7 +42,6 @@ export default{
     width: 100%
     height: 0
     padding-bottom: 31.25%
-    // background: #333
   .swiper-img
     width: 100%
 </style>
